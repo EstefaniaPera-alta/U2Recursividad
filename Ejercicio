@@ -1,0 +1,129 @@
+package U2Recursividad;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Ejercicio {
+    public static int fibonacci (int n) {
+        
+            if (n>2) 
+            {
+                return fibonacci(n-1 + n-2);
+            } else if(n==1)
+            {
+                return 1;    
+            }else if(n==0)
+            {
+                return 0;
+            }
+            return fibonacci(n--);
+      
+    }
+    //YA FUNCIONA C:
+    private static void Recursividad (int n)
+    {
+        if(n==11)
+        {
+        System.out.println("\nFin");
+            
+        }else
+        {
+            System.out.print(n+" ");
+            Recursividad(n+1);
+        }
+    }
+    //Este tambien ya jala xd
+    private static int Factorial (int n)
+    {
+        if(n==1)
+        {
+            return 1;
+        }else
+        {
+            return n * Factorial(n-1);
+        }  
+    }
+
+    public static void Desaparecer(int n)
+    {
+        List <Integer> Lista = new ArrayList<Integer>();
+        Lista.add(0);
+        Lista.add(1);
+        Lista.add(2);
+        Lista.add(3);
+        Lista.add(4);
+        Lista.add(5);
+        Lista.add(6);
+        Lista.add(7);
+        Lista.add(8);
+        Lista.add(9);
+        Lista.add(10);
+        int eli=10;
+        int i=1;
+        if(n==11)
+        {
+            System.out.println("\nFin");
+        }else 
+        {
+            if(i==11)
+            {
+                System.out.println("\n");
+            }else
+            {
+                Lista.remove(eli-n);
+                System.out.print(Lista.equals(Eli));
+                i++;
+            }
+            System.out.println("\n");
+            Desaparecer(n+1);
+            
+        }
+    }
+
+
+
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int a;
+        int fac;
+        
+        System.out.println("Este es un menu \n elige una opcion");
+        System.out.println("1.-Serie Fibonacci");
+        System.out.println("2.-Presentar numeros del 1 al 10");
+        System.out.println("3.-Factorial");
+        System.out.println("4.-Desaparece numeros");
+        System.out.println("5.-Palíndromos");
+        System.out.println("6.-Salir");
+        a = leer.nextInt();
+        
+
+        switch(a)
+        {   //No funciona
+            case 1: System.out.println("****************");
+            fibonacci(21);
+
+            break;
+            //Ya funciona
+            case 2:
+            System.out.println("****************");
+            Recursividad(1);
+            break;
+            //SI FUNCIONA 
+            case 3:
+            System.out.println(" ");
+            System.out.println("Ingese el numero del factorial");
+            fac=leer.nextInt();
+            System.out.println("El factorial de "+fac+" es: "+Factorial(fac));
+            break;
+            //SI/No Funciona
+            case 4:
+            Desaparecer(0);
+            break;
+            default: System.out.println("**************Elige un numero**********");
+
+        }
+
+    }
+}
